@@ -72,20 +72,24 @@
 				<h2 id="example" class="thrid__title title">Примеры моих работ</h2>
 				<div class="slider">
 					<div class="slider__item">
-						<img src="img/example_1.jpg" alt="">
+						<img src="img/example_1.jpg" alt="Сайт психолога Веры Антоновой">
 						<p class="slider__item-desc">Сайт психолога Веры Антоновой</p>
 					</div>
 					<div class="slider__item">
-						<img src="img/example_2.jpg" alt="">
+						<img src="img/example_2.jpg" alt="Сайт магазина детской одежды">
 						<p class="slider__item-desc">Сайт магазина детской одежды</p>
 					</div>
 					<div class="slider__item">
-						<img src="img/example_3.jpg" alt="">
+						<img src="img/example_3.jpg" alt="Сайт магазина Рыболов">
 						<p class="slider__item-desc">Сайт магазина «Рыболов»</p>
+					</div>
+					<div class="slider__item">
+						<img src="img/example_4.jpg" alt="Сайт строительной компании">
+						<p class="slider__item-desc">Сайт строительной компании</p>
 					</div>
 				</div>
 			</div>
-			<button class="thrid__btn btn reset-btn call">Заказать проект</button>
+			<button class="thrid__btn btn reset-btn project">Заказать проект</button>
 
 		</section>
 		<section id="price" class="four">
@@ -128,7 +132,7 @@
 			</div>
 		</div>
 		<div class="copy">&copy; Дмитрий Алексеев, 2016-2018</div>
-		<div class="popup">
+		<div id="popup" class="popup">
 			<div class="popup__body">
 				<a href="#" class="popup__close">X</a>
 				<div class="popup__content">
@@ -136,7 +140,21 @@
 					<div class="popup__form">
 						<input type="text" name="name" id="name" placeholder="Ваше имя">
 						<input type="tel" name="phone" id="phone" placeholder="Ваш номер телефона">
-						<input type="email" name="email" id="email" placeholder="Ваш e-mail">
+						<input type="submit" value="Отправить" class="popup__form--btn send">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-2" class="popup">
+			<div class="popup__body">
+				<a href="#" class="popup__close">X</a>
+				<div class="popup__content">
+					<h2 class="popup__title">Заказать проект</h2>
+					<div class="popup__form">
+						<input type="text" name="name" placeholder="Ваше имя">
+						<input type="tel" name="phone" placeholder="Ваш номер телефона">
+						<input type="email" name="email" placeholder="Ваш e-mail">
+						<textarea name="mail" placeholder="Опишите кратко свой проект"></textarea>
 						<input type="submit" value="Отправить" class="popup__form--btn send">
 					</div>
 				</div>

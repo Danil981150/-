@@ -1,14 +1,16 @@
 // Слайдер
 $(document).ready(function () {
 	$('.slider').slick({
-			slidesToShow: 3,
+		slidesToShow: 3,
+		centerMode: true,
+		variableWidth: true,
 					responsive: [
 						{
 							breakpoint: 1200,
 							settings: {
 								slidesToShow: 2,
-								centerMode: true,
-								variableWidth: true,
+								// centerMode: true,
+								// variableWidth: true,
 								dots: true
 							}
 						},
@@ -44,7 +46,8 @@ $(document).ready(function () {
 // popup
 $(document).ready(function () {
 	$(function () {
-		const popup = $('.popup')
+		const popup = $('#popup')
+		const secondPopup = $('#popup-2')
 	
 		const disableScroll = function () {
 			$('body').css({ 'overflow': 'hidden' })
@@ -63,6 +66,16 @@ $(document).ready(function () {
 				$(this).fadeOut(400, enabledScroll);
 			}
 		});
+
+		$('.project').click(function () {
+			$(secondPopup).fadeIn(400, disableScroll);
+		});
+	
+		$(secondPopup).click(function (event) {
+			if (event.target == this) {
+				$(this).fadeOut(400, enabledScroll);
+			}
+		});
 	
 		$('.popup__close').click(function (event) {
 			if (popup.length > 0) {
@@ -77,3 +90,19 @@ $(document).ready(function () {
 		};
 	});
 });
+
+// Скролл по ссылкам 
+
+$(document).ready(function () {
+	$('nav a').on('click', function (event) {
+		event.preventDefault();
+
+		let href = $(this).attr('href');
+
+		let offset = $(href).offset().top;
+
+		$('body,html').animate({
+			scrollTop: offset,
+		}, 700);
+	})
+})
