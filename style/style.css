@@ -753,6 +753,7 @@ i {
 	-ms-flex-pack: center;
 	justify-content: center;
 	width: 550px;
+	height: 100%;
 	background-color: rgba(149, 149, 149, 0.775);
 	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
@@ -799,11 +800,10 @@ input {
 }
 
 textarea {
-	resize: none;
 	width: 400px;
-	height: 200px;
 	outline: none;
 	padding: 10px;
+	resize: none;
 }
 
 .popup__form--btn {
@@ -814,9 +814,9 @@ textarea {
 	font-size: 16px;
 	font-weight: 400;
 	border: 1px solid #f82370;
-	/* padding: 15px 40px; */
 	width: 200px;
 	height: 50px;
+	padding: 0;
 }
 
 
@@ -1204,26 +1204,26 @@ textarea {
 @media (max-width: 768px) {
 	.brackets.tags__after-load {
 		font-size: 24px;
-		transform: translate(74px, -578px) rotate(20deg);
-		-webkit-transform: translate(74px, -578px) rotate(20deg);
-		-moz-transform: translate(74px, -578px) rotate(20deg);
-		-ms-transform: translate(74px, -578px) rotate(20deg);
-		-o-transform: translate(74px, -578px) rotate(20deg);
+		transform: translate(200px, -578px) rotate(20deg);
+		-webkit-transform: translate(200px, -578px) rotate(20deg);
+		-moz-transform: translate(200px, -578px) rotate(20deg);
+		-ms-transform: translate(200px, -578px) rotate(20deg);
+		-o-transform: translate(200px, -578px) rotate(20deg);
 }
 
 	.grid.tags__after-load {
 		font-size: 28px;
-		transform: translate(28px, -534px) rotate(20deg);
-		-webkit-transform: translate(28px, -534px) rotate(20deg);
-		-moz-transform: translate(28px, -534px) rotate(20deg);
-		-ms-transform: translate(28px, -534px) rotate(20deg);
-		-o-transform: translate(28px, -534px) rotate(20deg);
+		transform: translate(428px, -534px) rotate(20deg);
+		-webkit-transform: translate(200px, -534px) rotate(20deg);
+		-moz-transform: translate(328px, -534px) rotate(20deg);
+		-ms-transform: translate(228px, -534px) rotate(20deg);
+		-o-transform: translate(228px, -534px) rotate(20deg);
 }
 
 .slash.tags__after-load {
 	font-size: 18px;
-	transform: translate(160px, -668px) rotate(-5deg);
-	-webkit-transform: translate(160px, -668px) rotate(-5deg);
+	transform: translate(260px, -668px) rotate(-5deg);
+	-webkit-transform: translate(360px, -668px) rotate(-5deg);
 	-moz-transform: translate(160px, -668px) rotate(-5deg);
 	-ms-transform: translate(160px, -668px) rotate(-5deg);
 	-o-transform: translate(160px, -668px) rotate(-5deg);
@@ -1236,7 +1236,7 @@ textarea {
 .div__two.tags__after-load {
 	font-size: 15px;
 	transform: translate(252px, -638px) rotate(30deg);
-	-webkit-transform: translate(252px, -638px) rotate(30deg);
+	-webkit-transform: translate(452px, -638px) rotate(30deg);
 	-moz-transform: translate(252px, -638px) rotate(30deg);
 	-ms-transform: translate(252px, -638px) rotate(30deg);
 	-o-transform: translate(252px, -638px) rotate(30deg);
@@ -1403,7 +1403,7 @@ textarea {
 
 	.popup__body {
 		width: 350px;
-		height: 400px;
+		height: 450px;
 	}
 
 	.popup__title {
@@ -1411,7 +1411,11 @@ textarea {
 	}
 
 	input {
-		padding-right: 100px;
+		width: 200px;
+	}
+
+	textarea {
+		width: 200px;
 	}
 
 	.popup__form--btn {
@@ -1419,14 +1423,48 @@ textarea {
 	}
 }
 
+@media (max-width: 600px) {
+	.brackets.tags__after-load {
+		font-size: 24px;
+		transform: translate(100px, -578px) rotate(20deg);
+		-webkit-transform: translate(100px, -608px) rotate(20deg);
+		-moz-transform: translate(200px, -578px) rotate(20deg);
+		-ms-transform: translate(200px, -578px) rotate(20deg);
+		-o-transform: translate(200px, -578px) rotate(20deg);
+}
+
+	.grid.tags__after-load {
+		font-size: 28px;
+		transform: translate(428px, -534px) rotate(20deg);
+		-webkit-transform: translate(50px, -544px) rotate(20deg);
+		-moz-transform: translate(328px, -534px) rotate(20deg);
+		-ms-transform: translate(228px, -534px) rotate(20deg);
+		-o-transform: translate(228px, -534px) rotate(20deg);
+}
+
+.slash.tags__after-load {
+	font-size: 18px;
+	transform: translate(260px, -668px) rotate(-5deg);
+	-webkit-transform: translate(200px, -668px) rotate(-5deg);
+	-moz-transform: translate(160px, -668px) rotate(-5deg);
+	-ms-transform: translate(160px, -668px) rotate(-5deg);
+	-o-transform: translate(160px, -668px) rotate(-5deg);
+}
+
+.div__two.tags__after-load {
+	font-size: 15px;
+	transform: translate(252px, -638px) rotate(30deg);
+	-webkit-transform: translate(250px, -648px) rotate(30deg);
+	-moz-transform: translate(252px, -638px) rotate(30deg);
+	-ms-transform: translate(252px, -638px) rotate(30deg);
+	-o-transform: translate(252px, -638px) rotate(30deg);
+}
+}
+
 @media (max-width:425px) {
 	.popup__body {
 		width: 270px;
-		height: 350px;
-	}
-
-	input {
-		padding: 7px 50px 7px 5px;
+		height: 70%;
 	}
 
 	.popup__form--btn {

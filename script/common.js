@@ -46,7 +46,8 @@ $(document).ready(function () {
 // popup
 $(document).ready(function () {
 	$(function () {
-		const popup = $('#popup')
+		const popup = $('.popup')
+		const firstPopup = $('#popup')
 		const secondPopup = $('#popup-2')
 	
 		const disableScroll = function () {
@@ -58,10 +59,10 @@ $(document).ready(function () {
 		}
 	
 		$('.call').click(function () {
-			$(popup).fadeIn(400, disableScroll);
+			$(firstPopup).fadeIn(400, disableScroll);
 		});
 	
-		$(popup).click(function (event) {
+		$(firstPopup).click(function (event) {
 			if (event.target == this) {
 				$(this).fadeOut(400, enabledScroll);
 			}
