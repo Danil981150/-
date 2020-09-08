@@ -9,8 +9,8 @@ $(document).ready(function () {
 							breakpoint: 1200,
 							settings: {
 								slidesToShow: 2,
-								// centerMode: true,
-								// variableWidth: true,
+								centerMode: true,
+								variableWidth: true,
 								dots: true
 							}
 						},
@@ -18,7 +18,7 @@ $(document).ready(function () {
 							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
-								adaptiveHeight:true,
+								adaptiveHeight: true,
 								centerMode: true,
 								variableWidth: true,
 								arrows: false,
