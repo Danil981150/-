@@ -137,11 +137,11 @@
 				<a href="#" class="popup__close">X</a>
 				<div class="popup__content">
 					<h2 class="popup__title">Заказать звонок</h2>
-					<div class="popup__form">
+					<form id="form" class="popup__form">
 						<input type="text" name="name" id="name" placeholder="Ваше имя">
 						<input type="tel" name="phone" id="phone" placeholder="Ваш номер телефона">
-						<input type="submit" value="Отправить" class="popup__form--btn send">
-					</div>
+						<button type="submit" class="popup__form--btn send">Отправить</button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -150,19 +150,21 @@
 				<a href="#" class="popup__close">X</a>
 				<div class="popup__content">
 					<h2 class="popup__title">Заказать проект</h2>
-					<div class="popup__form">
+					<form id="form-2" class="popup__form">
 						<input type="text" name="name" placeholder="Ваше имя">
 						<input type="tel" name="phone" placeholder="Ваш номер телефона">
 						<input type="email" name="email" placeholder="Ваш e-mail">
 						<textarea name="mail" placeholder="Опишите кратко свой проект"></textarea>
-						<input type="submit" value="Отправить" class="popup__form--btn send">
-					</div>
+						<button type="submit" class="popup__form--btn send">Отправить</button>
+					</form>
 				</div>
 			</div>
 		</div>
 	</footer>
 	<script src="script/jquery-3.5.0.min.js"></script>
 	<script src="script/slick.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+	<script src="script/inputmask.min.js"></script>
 	<script src="script/common.js"></script>
 </body>
 

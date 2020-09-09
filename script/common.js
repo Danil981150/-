@@ -41,6 +41,11 @@ $(document).ready(function () {
 	$('.burger').click(function (event) {
 		$('.burger, .header__menu').toggleClass('active');
 	});
+	$('.menu__link').click(function (event) {
+		if ('.active'.length > 0) {
+			$('.burger, .header__menu').toggleClass('active');
+		}
+	})
 });
 
 // popup
@@ -79,18 +84,92 @@ $(document).ready(function () {
 		});
 	
 		$('.popup__close').click(function (event) {
+			event.preventDefault();
 			if (popup.length > 0) {
 				popup.fadeOut(400, enabledScroll);
 			}
 		});
 	
-		if (popup.length > 0) {
-			$('.send').click(function () {
-				popup.fadeOut(400, enabledScroll);
-			})
-		};
+		// if (popup.length > 0) {
+		// 	$('.send').click(function () {
+		// 		popup.fadeOut(400, enabledScroll);
+		// 	})
+		// };
 	});
 });
+
+// Отправка формы
+
+$('#form').validate({
+	rules: {
+		email: {
+			required: true,
+			email: true
+		},
+		name: {
+			required: true,
+			minlength: 3
+		},
+		phone: {
+			required: true,
+			minlength: 11
+		}
+	},
+	messages: {
+		email: {
+			required: 'Поле email обязательно для заполнения'
+		},
+		name: {
+			required: 'Имя обязательно должно быть заполнено',
+			minlength: 'Длина имени должна быть более 3-х символов'
+		},
+		phone: {
+			required: 'Поле с телефоном обязательно для заполнения',
+			minlength: 'Длина телефона должна быть 11 символов'
+		}
+	}
+})
+
+$('#form-2').validate({
+	rules: {
+		email: {
+			required: true,
+			email: true
+		},
+		name: {
+			required: true,
+			minlength: 3
+		},
+		phone: {
+			required: true,
+			minlength: 11
+		},
+				mail: {
+			required: true,
+		}
+	},
+	messages: {
+		email: {
+			required: 'Поле email обязательно для заполнения'
+		},
+		name: {
+			required: 'Имя обязательно должно быть заполнено',
+			minlength: 'Длина имени должна быть более 3-х символов'
+		},
+		phone: {
+			required: 'Поле с телефоном обязательно для заполнения',
+			minlength: 'Длина телефона должна быть 11 символов'
+		},
+				mail: {
+			required: 'Поле обязательно для заполнения',
+		}
+	}
+})
+
+// inputmask
+let inputs = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask('+7 (999) 999-99-99');
+im.mask(inputs);
 
 // Скролл по ссылкам 
 
