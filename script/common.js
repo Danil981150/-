@@ -90,11 +90,11 @@ $(document).ready(function () {
 			}
 		});
 	
-		// if (popup.length > 0) {
-		// 	$('.send').click(function () {
-		// 		popup.fadeOut(400, enabledScroll);
-		// 	})
-		// };
+		if (popup.length > 0) {
+			$('.send').click(function () {
+				popup.fadeOut(400, enabledScroll);
+			})
+		};
 	});
 });
 
@@ -115,6 +115,9 @@ $('#form').validate({
 			minlength: 11
 		}
 	},
+	submitHandler: function() {
+    alert("Спасибо! Ваша заявка принята.");
+  },
 	messages: {
 		email: {
 			required: 'Поле email обязательно для заполнения'
@@ -148,6 +151,9 @@ $('#form-2').validate({
 			required: true,
 		}
 	},
+	submitHandler: function() {
+    alert("Валидация успешна!");
+  },
 	messages: {
 		email: {
 			required: 'Поле email обязательно для заполнения'
@@ -166,10 +172,6 @@ $('#form-2').validate({
 	}
 })
 
-// inputmask
-let inputs = document.querySelectorAll('input[type="tel"]');
-let im = new Inputmask('+7 (999) 999-99-99');
-im.mask(inputs);
 
 // Скролл по ссылкам 
 
