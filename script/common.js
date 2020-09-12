@@ -89,12 +89,6 @@ $(document).ready(function () {
 				popup.fadeOut(400, enabledScroll);
 			}
 		});
-	
-		if (popup.length > 0) {
-			$('.send').click(function () {
-				popup.fadeOut(400, enabledScroll);
-			})
-		};
 	});
 });
 
@@ -116,7 +110,8 @@ $('#form').validate({
 		}
 	},
 	submitHandler: function() {
-    alert("Спасибо! Ваша заявка принята.");
+		alert("Спасибо! Ваша заявка принята.");
+		
   },
 	messages: {
 		email: {
@@ -152,7 +147,7 @@ $('#form-2').validate({
 		}
 	},
 	submitHandler: function() {
-    alert("Валидация успешна!");
+    alert("Спасибо! Ваша заявка принята.");
   },
 	messages: {
 		email: {
