@@ -108,10 +108,6 @@ $('#form').validate({
 			required: true,
 			minlength: 11
 		}
-	},
-	submitHandler: function() {
-		alert("Спасибо! Ваша заявка принята.");
-		
   },
 	messages: {
 		email: {
@@ -146,9 +142,6 @@ $('#form-2').validate({
 			required: true,
 		}
 	},
-	submitHandler: function() {
-    alert("Спасибо! Ваша заявка принята.");
-  },
 	messages: {
 		email: {
 			required: 'Поле email обязательно для заполнения'
