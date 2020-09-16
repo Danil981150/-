@@ -160,6 +160,36 @@ $('#form-2').validate({
 	}
 })
 
+$(document).ready(function () {
+	$('.popup__form--btn').on('click', function () {
+		var name = $('.name').val();
+		var phone = $('.phone').val();
+		var email = $('.email').val();
+		var mess = $('.mess').val();
+
+		$.ajax({
+			url: 'ajax/mail.php',
+			type: 'POST',
+			cache: false,
+			data: { 'name': name, 'phone': phone, 'email': email, 'mess': mess },
+			dataType: 'html',
+			success: function (data) {
+				$('.popup__content').hide();
+				$('.success').show();
+				$('.popup__form').trigger('reset');
+			}
+		});
+	});
+
+	function app () {
+		$('.popup__close').on('click', function () {
+			$('.success').hide();
+			$('.popup__content').show();
+	})
+	}
+		setTimeout(app, 5000)
+
+});
 
 // Скролл по ссылкам 
 

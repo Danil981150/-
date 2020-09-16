@@ -137,12 +137,13 @@
 				<a href="#" class="popup__close">X</a>
 				<div class="popup__content">
 					<h2 class="popup__title">Заказать звонок</h2>
-					<form action="php/mail.php" method="POST" id="form" class="popup__form">
-						<input type="text" name="name" id="name" placeholder="Ваше имя">
-						<input type="tel" name="phone" id="phone" placeholder="Ваш номер телефона">
-						<button type="submit" class="popup__form--btn">Отправить</button>
+					<form action="" method="POST" id="form" class="popup__form">
+						<input type="text" name="name" class="name" placeholder="Ваше имя">
+						<input type="tel" name="phone" class="phone" placeholder="Ваш номер телефона">
+						<button type="button" class="popup__form--btn">Отправить</button>
 					</form>
 				</div>
+						<div class="success">Спасибо! Ваша заявка принята.</div>
 			</div>
 		</div>
 		<div id="popup-2" class="popup">
@@ -150,14 +151,15 @@
 				<a href="#" class="popup__close">X</a>
 				<div class="popup__content">
 					<h2 class="popup__title">Заказать проект</h2>
-					<form action="php/mail.php" method="POST" id="form-2" class="popup__form">
-						<input type="text" name="name" placeholder="Ваше имя">
-						<input type="tel" name="phone" placeholder="Ваш номер телефона">
-						<input type="email" name="email" placeholder="Ваш e-mail">
-						<textarea name="mail" placeholder="Опишите кратко свой проект"></textarea>
-						<button type="submit" class="popup__form--btn">Отправить</button>
+					<form action="" method="POST" id="form-2" class="popup__form">
+						<input type="text" class="name" name="name" placeholder="Ваше имя">
+						<input type="tel" class="phone" name="phone" placeholder="Ваш номер телефона">
+						<input type="email" class="email" name="email" placeholder="Ваш e-mail">
+						<textarea name="mess" class="mess" placeholder="Опишите кратко свой проект"></textarea>
+						<button type="button" class="popup__form--btn">Отправить</button>
 					</form>
 				</div>
+				<div class="success">Спасибо! Ваша заявка принята.</div>
 			</div>
 		</div>
 	</footer>
