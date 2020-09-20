@@ -92,81 +92,33 @@ $(document).ready(function () {
 	});
 });
 
-// Отправка формы
-
-$('#form').validate({
-	rules: {
-		email: {
-			required: true,
-			email: true
-		},
-		name: {
-			required: true,
-			minlength: 3
-		},
-		phone: {
-			required: true,
-			minlength: 11
-		}
-  },
-	messages: {
-		email: {
-			required: 'Поле email обязательно для заполнения'
-		},
-		name: {
-			required: 'Имя обязательно должно быть заполнено',
-			minlength: 'Длина имени должна быть более 3-х символов'
-		},
-		phone: {
-			required: 'Поле с телефоном обязательно для заполнения',
-			minlength: 'Длина телефона должна быть 11 символов'
-		}
-	}
-})
-
-$('#form-2').validate({
-	rules: {
-		email: {
-			required: true,
-			email: true
-		},
-		name: {
-			required: true,
-			minlength: 3
-		},
-		phone: {
-			required: true,
-			minlength: 11
-		},
-				mail: {
-			required: true,
-		}
-	},
-	messages: {
-		email: {
-			required: 'Поле email обязательно для заполнения'
-		},
-		name: {
-			required: 'Имя обязательно должно быть заполнено',
-			minlength: 'Длина имени должна быть более 3-х символов'
-		},
-		phone: {
-			required: 'Поле с телефоном обязательно для заполнения',
-			minlength: 'Длина телефона должна быть 11 символов'
-		},
-				mail: {
-			required: 'Поле обязательно для заполнения',
-		}
-	}
-})
-
+// Отправка формы #1
 $(document).ready(function () {
+	$('.send').hide();
 	$('.popup__form--btn').on('click', function () {
+		$('.success').hide();
+
 		var name = $('.name').val();
 		var phone = $('.phone').val();
 		var email = $('.email').val();
 		var mess = $('.mess').val();
+		var fail = '';
 
+		if (name.length < 3) {
+			fail = 'Имя должно быть больше 3-х символов'
+		} else if (phone.length != 11) {
+			fail = 'Номер телефона должен содержать 11 символов'
+		} else if (email.split('@').length - 1 == 0 || email.split('.').length - 1 == 0) {
+			fail = 'Вы ввели неорректный email'
+		} else if (mess.length < 5) {
+			fail = 'Сообщение должно быть не иеньше 5 символов'
+		};
+		if (fail != ''){
+			$('.success').html(fail);
+			$('.success').show();
+			return false;
+		}
+		
 		$.ajax({
 			url: 'ajax/mail.php',
 			type: 'POST',
@@ -175,7 +127,7 @@ $(document).ready(function () {
 			dataType: 'html',
 			success: function (data) {
 				$('.popup__content').hide();
-				$('.success').show();
+				$('.send').show();
 				$('.popup__form').trigger('reset');
 			}
 		});
@@ -183,7 +135,53 @@ $(document).ready(function () {
 
 	function app () {
 		$('.popup__close').on('click', function () {
-			$('.success').hide();
+			$('.send').hide();
+			$('.popup__content').show();
+	})
+	}
+		setTimeout(app, 5000)
+
+});
+
+// Отправка формы #2
+
+$(document).ready(function () {
+	$('.send').hide();
+	$('.popup__form-btn').on('click', function () {
+		$('.success1').hide();
+
+		var nameSecond = $('.name1').val();
+		var phoneSecond = $('.phone1').val();
+		var failSecond = '';
+
+		if (nameSecond.length < 3) {
+			failSecond = 'Имя должно быть больше 3-х символов'
+		} else if (phoneSecond.length != 11) {
+			failSecond = 'Номер телефона должен содержать 11 символов'
+		} 
+		if (failSecond != ''){
+			$('.success1').html(failSecond);
+			$('.success1').show();
+			return false;
+		}
+		
+		$.ajax({
+			url: 'ajax/mail.php',
+			type: 'POST',
+			cache: false,
+			data: { 'name1': nameSecond, 'phone1': phoneSecond },
+			dataType: 'html',
+			success: function (data) {
+				$('.popup__content').hide();
+				$('.send').show();
+				$('.popup__form').trigger('reset');
+			}
+		});
+	});
+
+	function app () {
+		$('.popup__close').on('click', function () {
+			$('.send').hide();
 			$('.popup__content').show();
 	})
 	}
