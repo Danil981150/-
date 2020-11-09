@@ -1,17 +1,21 @@
 // Слайдер
 $(document).ready(function () {
 	$('.slider').slick({
+		// centerMode: true,
+		// variableWidth: true,
 		slidesToShow: 3,
-		centerMode: true,
-		variableWidth: true,
 					responsive: [
 						{
 							breakpoint: 1200,
 							settings: {
-								slidesToShow: 2,
-								centerMode: true,
-								variableWidth: true,
 								dots: true
+							}
+						},
+						{
+							breakpoint: 1024,
+							settings: {
+								slidesToShow: 2,
+								dots: true,
 							}
 						},
 						{
@@ -19,8 +23,6 @@ $(document).ready(function () {
 							settings: {
 								slidesToShow: 1,
 								adaptiveHeight: true,
-								centerMode: true,
-								variableWidth: true,
 								arrows: false,
 								dots: true
 							}

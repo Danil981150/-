@@ -17,5 +17,5 @@
 	$headers = "From: $nameSecond\r\nReply-to: $phoneSecond\r\nContent-type: text/html; charset=utf-8\r\n";
 
 	$success = mail("kollleeb@yandex.ru", $subject, $headers);
-	echo $success
+	echo $success;
 ?>
